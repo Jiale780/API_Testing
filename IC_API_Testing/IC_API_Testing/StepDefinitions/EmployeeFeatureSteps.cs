@@ -22,7 +22,6 @@ namespace IC_API_Testing.StepDefinitions
         {
             // Open chrome browser
             testDriver = new ChromeDriver();
-
             loginPageObj.GoToLoginPage(testDriver);
         }
         
