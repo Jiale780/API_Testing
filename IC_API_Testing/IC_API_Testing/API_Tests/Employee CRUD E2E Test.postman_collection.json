@@ -61,9 +61,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/v1/create",
+					"raw": "http://dummy.restapiexample.com/api/v1/create",
+					"protocol": "http",
 					"host": [
-						"{{baseUrl}}"
+						"dummy",
+						"restapiexample",
+						"com"
 					],
 					"path": [
 						"api",
@@ -114,9 +117,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/v1/update/{{employeeID}}",
+					"raw": "http://dummy.restapiexample.com/api/v1/update/{{employeeID}}",
+					"protocol": "http",
 					"host": [
-						"{{baseUrl}}"
+						"dummy",
+						"restapiexample",
+						"com"
 					],
 					"path": [
 						"api",
@@ -146,7 +152,7 @@
 							"    // Check success output\r",
 							"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 							"    // Check data output and get the employee ID as an environment variable\r",
-							"    pm.expect(jsonData.data).to.not.eql(pm.environment.get(\"employeeID\"));\r",
+							"    pm.expect(jsonData.data).to.eql(pm.environment.get(\"employeeID\"));\r",
 							"    // Check message output\r",
 							"    pm.expect(jsonData.message).to.eql(\"Successfully! Record has been deleted\");\r",
 							"});"
@@ -168,9 +174,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/v1/delete/{{employeeID}}",
+					"raw": "http://dummy.restapiexample.com/api/v1/delete/{{employeeID}}",
+					"protocol": "http",
 					"host": [
-						"{{baseUrl}}"
+						"dummy",
+						"restapiexample",
+						"com"
 					],
 					"path": [
 						"api",
