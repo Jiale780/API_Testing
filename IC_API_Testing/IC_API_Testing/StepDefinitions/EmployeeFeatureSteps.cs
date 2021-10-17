@@ -23,6 +23,9 @@ namespace IC_API_Testing.StepDefinitions
             // Open chrome browser
             testDriver = new ChromeDriver();
             loginPageObj.GoToLoginPage(testDriver);
+            loginPageObj.KeyInCredentials(testDriver);
+            loginPageObj.ClickLoginBtn(testDriver);
+            loginPageObj.ValidateUser(testDriver);
         }
         
         [Given(@"I navigate to employee page")]
