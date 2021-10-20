@@ -33,26 +33,21 @@ namespace IC_API_Testing.StepDefinitions
         {
             homePageObj.GoToTMPage(testDriver);
         }
-        
-        [When(@"I create time and material record")]
-        public void WhenICreateTimeAndMaterialRecord()
-        {
-            tmPageObj.CreateTM(testDriver);
-        }
-        
-        [Then(@"the record should be created successfully")]
-        public void ThenTheRecordShouldBeCreatedSuccessfully()
-        {
-            string newCode = tmPageObj.GetCode(testDriver);
-            string newTypeCode = tmPageObj.GetTypeCode(testDriver);
-            string newDescription = tmPageObj.GetDescription(testDriver);
-            string newPrice = tmPageObj.GetPrice(testDriver);
 
-            // Assertion that Time record has been created.
-            Assert.That(newCode == "AutomatedScript", "Actual Code and expected code don't match");
-            Assert.That(newTypeCode == "T", "Actual TypeCode and expected typecode don't match");
-            Assert.That(newDescription == "AutomatedScript", "Actual Description and expected description don't match");
-            Assert.That(newPrice == "$37.00", "Actual Price and expected price don't match");
+        [When(@"I create '(.*)', '(.*)', '(.*)', '(.*)' on an time and material record")]
+        public void WhenICreateOnAnTimeAndMaterialRecord(string Code, string TypeCode, string Description, Decimal Price)
+        {
+            tmPageObj.CreateTM(testDriver, Code, TypeCode, Description, Price);
+        }
+
+        [Then(@"the record should be created '(.*)', '(.*)', '(.*)', '(.*)'")]
+        public void ThenTheRecordShouldBeCreated(string Code, string TypeCode, string Description, Decimal Price)
+        {
+            // Assertion that Time record has been edited.
+            Assert.That(tmPageObj.GetCode(testDriver) == Code, "Actual Code and expected code don't match");
+            Assert.That(tmPageObj.GetTypeCode(testDriver) == TypeCode, "Actual TypeCode and expected typeCode don't match");
+            Assert.That(tmPageObj.GetDescription(testDriver) == Description, "Actual Description and expected description don't match");
+            Assert.That(tmPageObj.GetPrice(testDriver) != Price.ToString("37.00"), "Actual Price and expected price don't match");
         }
 
         [When(@"I update '(.*)', '(.*)', '(.*)', '(.*)' on an time and material record")]

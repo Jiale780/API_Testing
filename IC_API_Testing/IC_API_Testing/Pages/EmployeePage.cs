@@ -10,7 +10,7 @@ namespace IC_API_Testing.Pages
 {
     class EmployeePage
     {
-        public void CreateEmployee(IWebDriver testDriver)
+        public void CreateEmployee(IWebDriver testDriver, string Name, string UserName)
         {
             // Click on "Create New" button
             //Wait.WaitForElementToBeClickable(testDriver, "XPath", "//*[@id='container']/p/a", 2);
@@ -20,12 +20,12 @@ namespace IC_API_Testing.Pages
             // Identify "Name" from Textbox and Input name
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Name']", 2);
             IWebElement employeeName = testDriver.FindElement(By.Id("Name"));
-            employeeName.SendKeys("Fay Adios");
+            employeeName.SendKeys(Name);
 
             // Identify "Username" from Textbox and Input username
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Username']", 2);
             IWebElement usernameTextBox = testDriver.FindElement(By.Id("Username"));
-            usernameTextBox.SendKeys("Fay");
+            usernameTextBox.SendKeys(UserName);
 
             // Identify "Password" from Textbox and Input password
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Password']", 2);

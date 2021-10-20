@@ -75,16 +75,26 @@ namespace API_Testing.SpecFlow
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("01 create time and material record with valid details")]
+        [NUnit.Framework.DescriptionAttribute("1. create time and material record with valid details")]
         [NUnit.Framework.CategoryAttribute("tmtest")]
         [NUnit.Framework.CategoryAttribute("regression")]
-        public virtual void _01CreateTimeAndMaterialRecordWithValidDetails()
+        [NUnit.Framework.TestCaseAttribute("AutomatedScript", "T", "AutomatedScript", "37.00", null)]
+        public virtual void _1_CreateTimeAndMaterialRecordWithValidDetails(string code, string typeCode, string description, string price, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "tmtest",
                     "regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 create time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("Code", code);
+            argumentsOfScenario.Add("TypeCode", typeCode);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("Price", price);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1. create time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,22 +122,21 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I navigate to time and material page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.When("I create time and material record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I create \'{0}\', \'{1}\', \'{2}\', \'{3}\' on an time and material record", code, typeCode, description, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then("the record should be created successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the record should be created \'{0}\', \'{1}\', \'{2}\', \'{3}\'", code, typeCode, description, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("02 edit time and material record with valid details")]
+        [NUnit.Framework.DescriptionAttribute("2. edit time and material record with valid details")]
         [NUnit.Framework.CategoryAttribute("tmtest")]
         [NUnit.Framework.CategoryAttribute("regression")]
-        [NUnit.Framework.TestCaseAttribute("AutomatedScript", "T", "AutomatedScript", "37.00", null)]
         [NUnit.Framework.TestCaseAttribute("Automated Script", "M", "Automated Script is changed", "170.00", null)]
-        public virtual void _02EditTimeAndMaterialRecordWithValidDetails(string code, string typeCode, string description, string price, string[] exampleTags)
+        public virtual void _2_EditTimeAndMaterialRecordWithValidDetails(string code, string typeCode, string description, string price, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "tmtest",
@@ -142,8 +151,8 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("TypeCode", typeCode);
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("Price", price);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 edit time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2. edit time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -163,16 +172,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 15
+#line 19
  testRunner.Given("I logged into turn up portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 20
  testRunner.And("I navigate to time and material page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 21
  testRunner.When(string.Format("I update \'{0}\', \'{1}\', \'{2}\', \'{3}\' on an time and material record", code, typeCode, description, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 22
  testRunner.Then(string.Format("the record should have the updated \'{0}\', \'{1}\', \'{2}\', \'{3}\'", code, typeCode, description, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -180,17 +189,17 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("03 delete time and material record with valid details")]
+        [NUnit.Framework.DescriptionAttribute("3. delete time and material record with valid details")]
         [NUnit.Framework.CategoryAttribute("tmtest")]
         [NUnit.Framework.CategoryAttribute("regression")]
-        public virtual void _03DeleteTimeAndMaterialRecordWithValidDetails()
+        public virtual void _3_DeleteTimeAndMaterialRecordWithValidDetails()
         {
             string[] tagsOfScenario = new string[] {
                     "tmtest",
                     "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 delete time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 26
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3. delete time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -210,16 +219,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 27
+#line 30
  testRunner.Given("I logged into turn up portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 28
+#line 31
  testRunner.And("I navigate to time and material page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 32
  testRunner.When("I delete on an time and material record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 33
  testRunner.Then("the record should have the deleted successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
